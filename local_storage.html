@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="margin: 0">
+  <!-- Write your code below -->
+  <form id="form">
+    <label for="name">User Name:</label>
+    <input type="text" id="username" name="username"/>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"/>
+    <label for="telnumber">Phone Number:</label>
+    <input type="tel" id="phone" name="phone"/>
+    <button type="submit" id="submit">Submit</button>
+  </form>
+</body>
+<script>
+    const form = document.querySelector('#submit');
+    form.addEventListener('submit', function(event){
+    event.preventDefault();
+    localStorage.setItem('Username', event.target.username.value);
+    localStorage.setItem('Email', event.target.email.value);
+    localStorage.setItem('Phone', event.target.phone.value);
+    });
+</script>
+<script src="index.js"></script>
+
+</html>
